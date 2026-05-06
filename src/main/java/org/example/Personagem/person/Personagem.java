@@ -1,5 +1,6 @@
 package org.example.Personagem.person;
 
+import org.example.Enums.Classe;
 import org.example.Enums.Genero;
 import org.example.Enums.Raca;
 import org.example.Personagem.adicionais.Atributos;
@@ -10,7 +11,9 @@ public class Personagem {
     private Genero genero;
     private Raca raca;
     private Atributos atributos;
+    private Classe classe;
     private int level = 1;
+    private int exp;
     // atributo xp para evolução de level
 
     public Personagem(String nome, int idade) {
@@ -58,12 +61,28 @@ public class Personagem {
         this.atributos = atributos;
     }
 
+    public Classe getClasse() {
+        return classe;
+    }
+
+    public void setClasse(Classe classe) {
+        this.classe = classe;
+    }
+
     public int getLevel() {
         return level;
     }
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
     }
 
     @Override
@@ -74,7 +93,9 @@ public class Personagem {
                 ", genero=" + genero +
                 ", raca=" + raca +
                 ", atributos=" + atributos +
+                ", classe=" + classe +
                 ", level=" + level +
+                ", exp=" + exp +
                 '}';
     }
 }

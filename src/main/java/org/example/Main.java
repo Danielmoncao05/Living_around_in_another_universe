@@ -1,6 +1,7 @@
 package org.example;
 
 
+import org.example.Enums.Classe;
 import org.example.Enums.Genero;
 import org.example.Enums.Raca;
 import org.example.Personagem.adicionais.Atributos;
@@ -43,6 +44,7 @@ public class Main {
         EscolherGenero(personagem);
         System.out.println("Esoclha raça de personagem:");
         MenuRaca(personagem);
+        MenuClasses(personagem);
 
     }
 
@@ -66,6 +68,8 @@ public class Main {
     /*-------------------Menu Raca-----------------*/
     public void MenuRaca(Personagem personagem) {
         String menuRaca = """
+                
+                QUAL RAÇA DESEJA SER : 
                 -------------------------
                 |                       |
                 | 1- Humano             |
@@ -85,18 +89,56 @@ public class Main {
         switch (opcaoRaca) {
             case 1 :
                 personagem.setRaca(Raca.HUMANO);
+                personagem.getAtributos().setForca(+1);
+                personagem.getAtributos().setAgilidade(+1);
+                personagem.getAtributos().setInteligencia(+1);
+                personagem.getAtributos().setResistencia(+1);
+                personagem.getAtributos().setVitalidade(+1);
+
+                System.out.println("Humano Criado");
                 break;
             case 2:
                 personagem.setRaca(Raca.ELFOS);
+                personagem.getAtributos().setForca(+1);
+                personagem.getAtributos().setAgilidade(+3);
+                personagem.getAtributos().setInteligencia(+2);
+                personagem.getAtributos().setResistencia(-1);
+                personagem.getAtributos().setVitalidade(+2);
+
+                System.out.println("Elfo Criado");
                 break;
             case 3 :
                 personagem.setRaca(Raca.ANOES);
+                personagem.getAtributos().setForca(+3);
+                personagem.getAtributos().setAgilidade(-1);
+                personagem.getAtributos().setInteligencia(+2);
+                personagem.getAtributos().setResistencia(+3);
+                personagem.getAtributos().setVitalidade(+1);
+
+                System.out.println("Anão Criado");
                 break;
             case 4:
-                personagem.setRaca(Raca.GNOMOS);
+                personagem.setRaca(Raca.ORC);
+                personagem.getAtributos().setForca(+4);
+                personagem.getAtributos().setAgilidade(-1);
+                personagem.getAtributos().setInteligencia(-2);
+                personagem.getAtributos().setResistencia(+2);
+                personagem.getAtributos().setVitalidade(+3);
+
+                System.out.println("Orc Criado");
                 break;
             case 5 :
                 personagem.setRaca(Raca.DRACONATOS);
+                personagem.getAtributos().setForca(+3);
+                personagem.getAtributos().setInteligencia(+1);
+                personagem.getAtributos().setResistencia(+2);
+                personagem.getAtributos().setVitalidade(+2);
+
+                System.out.println("Draconato Criado");
+                break;
+
+            case 6 :
+                System.out.println("Saindo");
                 break;
             default: String mensagem = "Não possui outra opção, tente novamente";
         }
@@ -105,7 +147,7 @@ public class Main {
 
     /* -----------------Menu Atributos-------------------*/
 
-    public void menuAtributos (int opcao , Atributos atributos) {
+    public void menuAtributos (Atributos atributos) {
         String menuAtributos = """
                 -------------------------
                 |                       |
@@ -120,22 +162,73 @@ public class Main {
 
         int pontos = 10;
 
+        int opcao = scanner.nextInt();
+        scanner.nextLine();
+
+        do {
+            System.out.println(menuAtributos);
+
+            switch (opcao) {
+                case 1 :
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                default:
+            }
+
+        } while(opcao!= 6);
+
+
+
+    }
+
+    public void MenuClasses (Personagem personagem) {
+        String menuClasses = """
+                
+                QUAL CLASSE DESEJA SE TORNAR:
+                -------------------------
+                |                       |
+                | 1- Guerreiro          |
+                | 2- Mago               |
+                | 3- Paladino           |
+                | 4- Barbaro            |
+                | 5- Sair               |
+                |                       |
+                -------------------------
+                """;
+
+        int opcao = scanner.nextInt();
+        scanner.nextLine();
+
         switch (opcao) {
             case 1 :
+                personagem.setClasse(Classe.GUERREIRO);
+                System.out.println("Guerreiro Criado");
                 break;
             case 2:
+                personagem.setClasse(Classe.MAGO);
+                System.out.println("Mago Criado");
                 break;
-            case 3:
+            case 3 :
+                personagem.setClasse(Classe.PALADINO);
+                System.out.println("Paladino Criado");
                 break;
-            case 4:
+            case 4 :
+                personagem.setClasse(Classe.BARBARO);
+                System.out.println("Barbaro Criado");
+            case 5 :
                 break;
-            case 5:
-                break;
-
             default:
+                System.out.println("Opção não existe, tente novamente");
         }
-
-
     }
 
 
