@@ -22,6 +22,7 @@ public class Main {
 
 // criar menu principal em main
         // finalizar crud de personagem e atributos
+
     }
 
     // Personagem //
