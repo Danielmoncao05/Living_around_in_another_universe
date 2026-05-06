@@ -19,21 +19,36 @@ public class Main {
 
     public static void main(String[] args) {
         String titulo = "Bem-vindo ao LAIAU";
-        String menu = """
-                ---------------------------------
-                |
-                |
-                |
-                |
-                |
-                |
-                |
-                |
-                ---------------------------------
-                """;
+
+// criar menu principal em main
+        // finalizar crud de personagem e atributos
     }
 
+    // Personagem //
 
+
+    /* ------------menu personagem --------------------*/
+
+    public void menuPersonagem () {
+        String menuPersonagem = """
+                ---------------------------------
+                |                               |
+                | 1- Criar personagem           |
+                | 2- Exibir personagens         |
+                | 3- Atualizar Personagem       |
+                | 4- Deletar Personagem         |
+                | 5- Voltar                     |
+                ---------------------------------
+                """;
+
+
+
+//        int opcao = scanner.nextInt();
+//        scanner.nextLine();
+
+        System.out.println(menuPersonagem);
+
+    }
     public void CriarPersonagem () {
         System.out.println("Digite nome do personagem: ");
         String nome = scanner.nextLine();
@@ -45,9 +60,18 @@ public class Main {
         System.out.println("Esoclha raça de personagem:");
         MenuRaca(personagem);
         MenuClasses(personagem);
-
+        listaPersonagem.add(personagem);
+        System.out.println("Personagem criado com sucesso");
     }
 
+    /*exibir personagens*/
+
+    public void exibirPersonagens () {
+
+        for(Personagem p : listaPersonagem) {
+            System.out.println(p);
+        }
+    }
     /*------------------------Menu Genero---------------------------------*/
 
     public void EscolherGenero (Personagem personagem) {
