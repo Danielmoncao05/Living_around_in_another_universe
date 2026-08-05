@@ -73,6 +73,49 @@ public class Main {
             System.out.println(p);
         }
     }
+
+    /*-------- atualizar personagem------------ */
+
+    public void atualizarPersonagem () {
+        for (Personagem p : listaPersonagem){
+            System.out.println(p);
+        }
+        System.out.println("Selecione o personagem que deseja atualizar:");
+        int opcao = scanner.nextInt();
+        scanner.nextLine();
+        Personagem atualizado = listaPersonagem.get(opcao - 1);
+        System.out.println("Digite um novo nome:");
+        String nome = scanner.nextLine();
+        atualizado.setNome(nome);
+        System.out.println("Digite uma nova idade: ");
+        int idade = scanner.nextInt();
+        scanner.nextLine();
+        atualizado.setIdade(idade);
+        System.out.println("Dados atualizado com sucesso");
+    }
+
+    public void deletarPersonagem () {
+        for (Personagem p : listaPersonagem) {
+            System.out.println(p);
+        }
+        System.out.println("Selecione o personagem que deseja excluir:");
+        int opcao = scanner.nextInt();
+        scanner.nextLine();
+        listaPersonagem.remove(opcao -1);
+        System.out.println("Personagem deletado com sucesso!!!");
+    }
+
+    /*---------------- Selecionar Personagem------------------*/
+    public Personagem SelecaoPersonagem () {
+        for (Personagem p: listaPersonagem){
+            System.out.println(p);
+        }
+        System.out.println("Selecione seu personagem:");
+        int opcao = scanner.nextInt();
+        scanner.nextLine();
+        Personagem selecionado = listaPersonagem.get(opcao - 1);
+        return selecionado;
+    }
     /*------------------------Menu Genero---------------------------------*/
 
     public void EscolherGenero (Personagem personagem) {
@@ -243,25 +286,56 @@ public class Main {
             case 1 :
                 personagem.setClasse(Classe.GUERREIRO);
                 System.out.println("Guerreiro Criado");
+                DefinicaoClasse(personagem);
                 break;
             case 2:
                 personagem.setClasse(Classe.MAGO);
                 System.out.println("Mago Criado");
+                DefinicaoClasse(personagem);
                 break;
             case 3 :
                 personagem.setClasse(Classe.PALADINO);
                 System.out.println("Paladino Criado");
+                DefinicaoClasse(personagem);
                 break;
             case 4 :
                 personagem.setClasse(Classe.BARBARO);
                 System.out.println("Barbaro Criado");
-            case 5 :
-                break;
+                DefinicaoClasse(personagem);
             default:
                 System.out.println("Opção não existe, tente novamente");
         }
     }
 
 
+    public Personagem DefinicaoClasse (Personagem personagem) {
+        if (personagem.getClasse() == Classe.GUERREIRO) {
+            personagem.getAtributos().setForca(8);
+            personagem.getAtributos().setAgilidade(4);
+            personagem.getAtributos().setInteligencia(2);
+            personagem.getAtributos().setVitalidade(7);
+            personagem.getAtributos().setResistencia(5);
+        } else if (personagem.getClasse() == Classe.MAGO) {
+            personagem.getAtributos().setForca(2);
+            personagem.getAtributos().setAgilidade(4);
+            personagem.getAtributos().setInteligencia(9);
+            personagem.getAtributos().setVitalidade(3);
+            personagem.getAtributos().setResistencia(1);
+        }else if (personagem.getClasse() == Classe.PALADINO) {
+            personagem.getAtributos().setForca(7);
+            personagem.getAtributos().setAgilidade(3);
+            personagem.getAtributos().setInteligencia(5);
+            personagem.getAtributos().setVitalidade(8);
+            personagem.getAtributos().setResistencia(3);
+        }else if (personagem.getClasse() == Classe.BARBARO) {
+            personagem.getAtributos().setForca(5);
+            personagem.getAtributos().setAgilidade(3);
+            personagem.getAtributos().setInteligencia(3);
+            personagem.getAtributos().setVitalidade(8);
+            personagem.getAtributos().setResistencia(8);
+        }
 
+        return personagem;
+    }
+/// ////////////////////////////////////////////////////////////////////////////
 }
