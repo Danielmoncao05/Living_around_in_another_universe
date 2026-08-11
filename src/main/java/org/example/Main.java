@@ -1,14 +1,6 @@
 package org.example;
 
 
-import org.example.Enums.Classe;
-import org.example.Enums.Genero;
-import org.example.Enums.Raca;
-import org.example.Personagem.Lista.ListaPersonagens;
-import org.example.Personagem.adicionais.Atributos;
-import org.example.Personagem.person.Personagem;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -29,5 +21,24 @@ public class Main {
                 |                                 |
                 -----------------------------------
                 """;
+
+        int opcao;
+
+        do {
+            System.out.println(principal);
+
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Selecione uma opção");
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("aaaaa");
+                    break;
+                default:
+                    System.out.println("Opção invalida!!");
+            }
+
+        } while (opcao != 6);
     }
 }

@@ -2,6 +2,7 @@ package org.example.Menus.Personagem.CRUD;
 
 import org.example.Menus.Classes.MenuClasses;
 import org.example.Menus.Genero.MenuGenero;
+import org.example.Menus.Personagem.RepositoryPersonagem.RepositoryPerson;
 import org.example.Menus.Raca.MenuRaca;
 import org.example.Personagem.person.Personagem;
 
@@ -11,7 +12,7 @@ import java.util.Scanner;
 public class CrudPersonagem {
 
     static Scanner scanner = new Scanner(System.in);
-    static ArrayList<Personagem> listaPersonagem = new ArrayList<>();
+    RepositoryPerson listaPersonagem = new RepositoryPerson();
 
     public void CriarPersonagem () {
         System.out.println("Digite nome do personagem: ");
@@ -24,29 +25,25 @@ public class CrudPersonagem {
         System.out.println("Esoclha raça de personagem:");
         MenuRaca.MenuRaca(personagem);
         MenuClasses.MenuClasses(personagem);
-        listaPersonagem.add(personagem);
+        listaPersonagem.adicionarPersonagem(personagem);
         System.out.println("Personagem criado com sucesso");
     }
+
 
     /*exibir personagens*/
 
     public void exibirPersonagens () {
-
-        for(Personagem p : listaPersonagem) {
-            System.out.println(p);
-        }
+       listaPersonagem.exibirPersonagens();
     }
 
     /*-------- atualizar personagem------------ */
 
     public void atualizarPersonagem () {
-        for (Personagem p : listaPersonagem){
-            System.out.println(p);
-        }
+        listaPersonagem.exibirPersonagens();
         System.out.println("Selecione o personagem que deseja atualizar:");
         int opcao = scanner.nextInt();
         scanner.nextLine();
-        Personagem atualizado = listaPersonagem.get(opcao - 1);
+        Personagem atualizado = listaPersonagem.exibirPersonPorIndice(opcao -1);
         System.out.println("Digite um novo nome:");
         String nome = scanner.nextLine();
         atualizado.setNome(nome);
@@ -58,13 +55,11 @@ public class CrudPersonagem {
     }
 
     public void deletarPersonagem () {
-        for (Personagem p : listaPersonagem) {
-            System.out.println(p);
-        }
-        System.out.println("Selecione o personagem que deseja excluir:");
+
+        listaPersonagem.exibirPersonagens();
+        System.out.println("Remova um personagem: ");
         int opcao = scanner.nextInt();
         scanner.nextLine();
-        listaPersonagem.remove(opcao -1);
-        System.out.println("Personagem deletado com sucesso!!!");
+       listaPersonagem.removerPersonagem(opcao -1);
     }
 }

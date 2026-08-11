@@ -7,6 +7,8 @@ public class Atributos {
     private int resistencia = 5;
     private int vitalidade = 5;
 
+
+
     public int getForca() {
         return forca;
     }
