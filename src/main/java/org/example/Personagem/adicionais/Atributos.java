@@ -51,12 +51,19 @@ public class Atributos {
 
     @Override
     public String toString() {
-        return "Atributos{" +
-                "forca=" + forca +
-                ", agilidade=" + agilidade +
-                ", inteligencia=" + inteligencia +
-                ", resistencia=" + resistencia +
-                ", vitalidade=" + vitalidade +
-                '}';
+        return
+//                "Atributos{" +
+//                "forca=" + forca +
+//                ", agilidade=" + agilidade +
+//                ", inteligencia=" + inteligencia +
+//                ", resistencia=" + resistencia +
+//                ", vitalidade=" + vitalidade +
+//                '}';
+               "Atributos do personagem :" +
+                       "Força" + forca +
+                       "Agilidade" + agilidade +
+                       "Inteligencia" + inteligencia +
+                       "Resistência" + resistencia +
+                       "Vitalidade" + vitalidade;
     }
 }

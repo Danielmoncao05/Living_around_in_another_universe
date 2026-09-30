@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class CrudPersonagem {
 
     static Scanner scanner = new Scanner(System.in);
-    RepositoryPerson listaPersonagem = new RepositoryPerson();
+    static RepositoryPerson listaPersonagem = new RepositoryPerson();
 
     public void CriarPersonagem () {
         System.out.println("Digite nome do personagem: ");
@@ -27,8 +27,8 @@ public class CrudPersonagem {
         MenuClasses.MenuClasses(personagem);
         listaPersonagem.adicionarPersonagem(personagem);
         System.out.println("Personagem criado com sucesso");
+        System.out.println(personagem.getAtributos());
     }
-
 
     /*exibir personagens*/
 

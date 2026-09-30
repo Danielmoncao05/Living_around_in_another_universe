@@ -14,6 +14,7 @@ public class Personagem {
     private Classe classe;
     private int level = 1;
     private int exp;
+    private int pontosAtributos = 10;
     // atributo xp para evolução de level
 
     public Personagem(String nome, int idade) {
@@ -83,6 +84,14 @@ public class Personagem {
 
     public void setExp(int exp) {
         this.exp = exp;
+    }
+
+    public int getPontosAtributos() {
+        return pontosAtributos;
+    }
+
+    public void setPontosAtributos(int pontosAtributos) {
+        this.pontosAtributos = pontosAtributos;
     }
 
     @Override
